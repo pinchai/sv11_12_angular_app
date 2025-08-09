@@ -1,0 +1,43 @@
+<div class="container py-4">
+  <div class="row">
+
+    <div class="col-md-6 mb-4">
+      <div class="card border-0 shadow-sm position-relative">
+        <span class="badge badge-danger product-badge">{{ product.category }}</span>
+        <img
+          id="mainImage"
+          src="{{ product.image }}"
+          class="card-img-top"
+          style="height: 400px; object-fit: contain;"
+          alt="{{ product.image }}"
+        >
+      </div>
+    </div>
+
+    <!-- Details -->
+    <div class="col-md-6 mb-4">
+      <h2 class="mb-1">{{ product.title }}</h2>
+      <div class="d-flex align-items-center mb-2">
+        <div class="rating mr-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+      </div>
+      <div class="mb-3">
+        <span class="price">{{ product.price | currency }}</span>
+        <small class="text-success d-block">In stock</small>
+      </div>
+
+      <p class="text-muted">
+        {{ product.description }}
+      </p>
+
+      <!-- Quantity + CTA -->
+      <div class="d-flex align-items-center mb-4">
+        <button class="btn btn-primary btn-lg mr-2" id="btnAddToCart"><i class="fas fa-shopping-cart mr-1"></i> Add to
+          Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

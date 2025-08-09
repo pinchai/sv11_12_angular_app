@@ -1,0 +1,35 @@
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+  align-items: center;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.qty-box {
+  width: 60px;
+  text-align: center;
+}
+
+.remove-btn {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.cart-total {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.checkout-btn {
+  width: 100%;
+}

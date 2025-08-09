@@ -1,0 +1,84 @@
+<div class="container mt-5 mb-5">
+  <h2 class="mb-4">Your Cart</h2>
+  <div class="card shadow">
+    <div class="card-body p-4">
+      @if (cartService.getCartItem().length == 0) {
+        <div class="col-12 text-center">
+          <h4 style="color: #cccc">Your cart is empty</h4>
+          <a routerLink="/">🔙 Continue Shopping</a>
+        </div>
+      }
+
+      <!-- cart_item-->
+      @for (item of cartService.getCartItem(); track item.id) {
+        <div class="row cart-item">
+          <div class="col-1" style="align-items: center; display: flex;">
+            <input
+              type="checkbox"
+              [checked]="item.is_select"
+              (change)="cartService.selectCartItem(item)"
+              class="form-control form-check-input"
+            >
+          </div>
+          <div class="col-1">
+            <img
+              [src]="item.image"
+              class="cart-img"
+              [alt]="item.title"
+            >
+          </div>
+          <div class="col-2">
+            <h6>{{ item.title }}</h6>
+            <p class="mb-0 text-muted">{{ item.category }}</p>
+          </div>
+          <div class="col-2">
+            <span>{{ item.price | currency }}</span>
+          </div>
+          <div class="col-2">
+            <input
+              type="button"
+              value="-"
+              class="btn btn-sm btn-outline-danger"
+              (click)="cartService.decrementQty(item)"
+            >
+            <strong
+              class="btn btn-sm"
+              style="font-size: 20px"
+            >{{ item.qty }}</strong>
+            <input
+              type="button"
+              value="+"
+              class="btn btn-sm btn-outline-primary"
+              (click)="cartService.incrementQty(item)"
+            >
+          </div>
+          <div class="col-2">
+            <strong>{{ item.price * item.qty | currency }}</strong>
+          </div>
+          <div class="col-2 text-right">
+            <span
+              class="remove-btn"
+              (click)="cartService.removeCartItem(item)"
+            >Remove</span>
+          </div>
+        </div>
+      }
+
+      @if (cartService.getCartItem().length > 0) {
+        <!-- Cart Total -->
+        <div class="row mt-4">
+          <div class="col-6"></div>
+          <div class="col-6 text-right cart-total">
+            Total: {{ cartService.getCartTotal() | currency }}
+          </div>
+        </div>
+        <!-- Checkout Button -->
+        <div class="row mt-3">
+          <div class="col-12">
+            <button class="btn btn-success checkout-btn">Checkout</button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+
+body {
+  background: #f8f9fa;
+}
+
+.breadcrumb {
+  background: transparent;
+}
+
+.product-badge {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+}
+
+.thumbs img {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: .25rem;
+}
+
+.thumbs img.active {
+  border-color: #007bff;
+}
+
+.price {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #6c757d;
+  margin-left: .5rem;
+}
+
+.rating i {
+  color: #ffc107;
+}
+
+.size-pill input {
+  display: none;
+}
+
+.size-pill label {
+  border: 1px solid #dee2e6;
+  border-radius: 50px;
+  padding: .35rem .8rem;
+  margin: 0 .35rem .35rem 0;
+  cursor: pointer;
+  background: #fff;
+}
+
+.size-pill input:checked + label {
+  border-color: #007bff;
+  color: #007bff;
+  box-shadow: 0 0 0 .1rem rgba(0, 123, 255, .15);
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.color-swatch.active {
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+.qty-input {
+  max-width: 140px;
+}
+
+.specs dt {
+  width: 120px;
+}
+
+.specs dd {
+  margin-left: 140px;
+}
+
+.card-product:hover {
+  transform: translateY(-2px);
+  transition: .15s;
+}

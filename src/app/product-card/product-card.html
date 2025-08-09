@@ -1,0 +1,29 @@
+<div class="card h-100">
+      <span class="discount-badge">
+        <span class="badge badge-danger discount-badge">
+          {{ product.category }}
+        </span>
+      </span>
+  <img [src]="product.image" class="card-img-top pro-img" alt="Regular Shorts">
+  <span class="brand-label product-title">{{ product.title }}</span>
+  <div class="card-body pb-2 pt-3 px-2">
+    <div class="d-flex align-items-center mb-1">
+      <span
+        class="product-price mr-2"
+        style="font-size:1.2rem; font-weight:bold; background-color: yellow; color: darkred"
+      >
+        {{ product.price | currency }}
+      </span>
+      <span
+        class="favorite ml-auto btn btn-sm btn-outline-primary"
+        (click)="addToCart(product)"
+      >Add To Cart</span>
+    </div>
+    <div
+      style="font-size:1rem; cursor: pointer"
+      class="product-description"
+      [routerLink]="['/product-detail']"
+      [queryParams]="{ product_id: product.id }"
+    >{{ product.description }}</div>
+  </div>
+</div>
